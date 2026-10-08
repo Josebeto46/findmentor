@@ -1,2 +1,2 @@
 # findmentor
-Proyecto de Gestión de INgresos
+Proyecto de Gestión de Ingresos
