@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f8f6;
+  --foreground: #10201c;
+  --surface: #ffffff;
+  --muted: #566661;
+  --border: #d9e1dd;
+  --brand: #0f6f6c;
+  --brand-fg: #ffffff;
+  --brand-soft: #e1f1ee;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --warn: #8f3a07;
+  /* Gráficos (paleta validada: scripts/validate_palette.js) */
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --chart-grid: #e8ecea;
+  --chart-axis: #c4cfca;
+}
+
+:root:not([data-theme="light"]) {
+  @media (prefers-color-scheme: dark) {
+    --background: #0b1512;
+    --foreground: #e8f0ed;
+    --surface: #12201c;
+    --muted: #93a59f;
+    --border: #243630;
+    --brand: #2dd4bf;
+    --brand-fg: #06201b;
+    --brand-soft: #123530;
+    --danger: #f97066;
+    --danger-soft: #3a1714;
+    --warn: #fdb022;
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --chart-grid: #1f2f2a;
+    --chart-axis: #34463f;
+  }
+}
+
+:root[data-theme="dark"] {
+  --background: #0b1512;
+  --foreground: #e8f0ed;
+  --surface: #12201c;
+  --muted: #93a59f;
+  --border: #243630;
+  --brand: #2dd4bf;
+  --brand-fg: #06201b;
+  --brand-soft: #123530;
+  --danger: #f97066;
+  --danger-soft: #3a1714;
+  --warn: #fdb022;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --chart-grid: #1f2f2a;
+  --chart-axis: #34463f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-fg: var(--brand-fg);
+  --color-brand-soft: var(--brand-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warn: var(--warn);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
